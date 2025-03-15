@@ -2,45 +2,76 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Одностраничный сайт</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="page1.html">Страница 1</a></li>
-                <li><a href="page2.html">Страница 2</a></li>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>Добро пожаловать на сайт</h1>
-        <section class="content">
-            <table>
-                <tr>
-                    <th>Заголовок 1</th>
-                    <th>Заголовок 2</th>
-                </tr>
-                <tr>
-                    <td>Данные 1</td>
-                    <td>Данные 2</td>
-                </tr>
-            </table>
-            <ol>
-                <li>Пункт 1</li>
-                <li>Пункт 2</li>
-            </ol>
-            <ul>
-                <li>Элемент 1</li>
-                <li>Элемент 2</li>
-            </ul>
+        <section id="home" class="hero">
+            <h1>Добро пожаловать на наш сайт</h1>
+            <p>Мы создаем современные и красивые решения для вас.</p>
+            <button id="cta-button">Узнать больше</button>
+        </section>
+
+        <section id="about" class="about">
+            <h2>О нас</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Наша миссия</h3>
+                    <p>Мы стремимся предоставлять лучшие решения для наших клиентов.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Наша команда</h3>
+                    <p>Профессионалы с многолетним опытом в своей области.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Услуги</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Веб-разработка</h3>
+                    <p>Создание современных и адаптивных сайтов.</p>
+                </div>
+                <div class="flex-item">
+                    <h3>Дизайн</h3>
+                    <p>Уникальный дизайн для вашего бренда.</p>
+                </div>
+                <div class="flex-item">
+                    <h3>Консалтинг</h3>
+                    <p>Экспертные советы по развитию вашего бизнеса.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Контакты</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2023</p>
+        <p>&copy; 2023 Одностраничный сайт. Все права защищены.</p>
     </footer>
+
     <script src="assets/js/style.js"></script>
 </body>
 </html>
