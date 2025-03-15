@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const ctaButton = document.getElementById('cta-button');
+    const contactForm = document.getElementById('contact-form');
+
+    // Анимация кнопки
+    ctaButton.addEventListener('click', () => {
+        alert('Спасибо за ваш интерес!');
+    });
+
+    // Обработка формы
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Ваше сообщение отправлено!');
+        contactForm.reset();
+    });
+
+    // Динамическое изменение фона заголовка
     const header = document.querySelector('header');
-    header.style.transform = 'rotate(5deg)';
-    header.style.transition = 'transform 1s ease';
-
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-        link.addEventListener('mouseover', () => {
-            link.style.color = '#feb47b';
-        });
-        link.addEventListener('mouseout', () => {
-            link.style.color = 'white';
-        });
-    });
-
-    const content = document.querySelector('.content');
-    content.addEventListener('mouseover', () => {
-        content.style.transform = 'scale(1.05)';
-        content.style.transition = 'transform 0.3s ease';
-    });
-    content.addEventListener('mouseout', () => {
-        content.style.transform = 'scale(1)';
-    });
+    setInterval(() => {
+        const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+        header.style.backgroundColor = randomColor;
+    }, 2000);
 });
