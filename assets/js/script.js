@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обработка формы
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener(' submit', (e) => {
         e.preventDefault();
         alert('Ваше сообщение отправлено!');
         contactForm.reset();
@@ -20,4 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
         header.style.backgroundColor = randomColor;
     }, 2000);
+
+    // Примеры 2D трансформаций
+    const gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'rotate(5deg)';
+        });
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'rotate(0deg)';
+        });
+    });
+
+    const flexItems = document.querySelectorAll('.flex-item');
+    flexItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'translateY(-10px)';
+        });
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'translateY(0)';
+        });
+    });
 });
