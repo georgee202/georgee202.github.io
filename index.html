@@ -1,120 +1,133 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Одностраничный сайт</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аналитический портал - Главная</title>
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Анимации только для главной страницы -->
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contact">Контакты</a></li>
-                <li><a href="dynamic.html">Динамическая страница</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Шапка сайта -->
+  <header class="main-header">
+    <h1>Аналитический портал</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Главная</a></li>
+        <li><a href="stats.html">Статистика</a></li>
+        <li><a href="dynamic.html">Динамические данные</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home" class="hero">
-            <h1>Добро пожаловать на наш сайт</h1>
-            <p>Мы создаем современные и красивые решения для вас.</p>
-            <button id="cta-button">Узнать больше</button>
-        </section>
+  <!-- Основное содержимое -->
+  <main class="grid-container">
+    <!-- Блок с приветствием -->
+    <section class="hero">
+      <h2>Добро пожаловать на аналитический портал</h2>
+      <p>Актуальные данные и аналитика в реальном времени</p>
+    </section>
 
-        <section id="about" class="about">
-            <h2>О нас</h2>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3>Наша миссия</h3>
-                    <p>Мы стремимся предоставлять лучшие решения для наших клиентов.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Наша команда</h3>
-                    <p>Профессионалы с многолетним опытом в своей области.</p>
-                </div>
-            </div>
+    <!-- Блок с основными показателями -->
+    <section class="metrics">
+      <h2>Ключевые показатели</h2>
+      
+      <!-- Таблица 1 -->
+      <table class="data-table">
+        <caption>Экономические показатели</caption>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>Значение</th>
+            <th>Изменение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ВВП</td>
+            <td>4.5%</td>
+            <td>+0.2%</td>
+          </tr>
+          <tr>
+            <td>Инфляция</td>
+            <td>5.8%</td>
+            <td>-0.1%</td>
+          </tr>
+        </tbody>
+      </table>
 
-            <h3>Наша история</h3>
-            <ol>
-                <li>Основание компании в 2010 году</li>
-                <li>Расширение услуг в 2015 году</li>
-                <li>Выход на международный рынок в 2020 году</li>
-            </ol>
+      <!-- Список определений 1 -->
+      <dl class="definitions">
+        <dt>ВВП</dt>
+        <dd>Валовый внутренний продукт - основной показатель экономической активности</dd>
+        <dt>ИПЦ</dt>
+        <dd>Индекс потребительских цен - основной показатель инфляции</dd>
+      </dl>
+    </section>
 
-            <h3>Наши ценности</h3>
-            <ul>
-                <li>Качество</li>
-                <li>Инновации</li>
-                <li>Клиентоориентированность</li>
-            </ul>
-        </section>
+    <!-- Блок с новостями -->
+    <section class="news">
+      <h2>Последние новости</h2>
+      
+      <!-- Нумерованный список -->
+      <ol class="numbered-list">
+        <li>Изменение ключевой ставки</li>
+        <li>Новые санкции на рынке</li>
+        <li>Изменения в налоговом кодексе</li>
+      </ol>
 
-        <section id="services" class="services">
-            <h2>Услуги</h2>
-            <div class="flex-container">
-                <div class="flex-item">
-                    <h3>Веб-разработка</h3>
-                    <p>Создание современных и адаптивных сайтов.</p>
-                </div>
-                <div class="flex-item">
-                    <h3>Дизайн</h3>
-                    <p>Уникальный дизайн для вашего бренда.</p>
-                </div>
-                <div class="flex-item">
-                    <h3>Консалтинг</h3>
-                    <p>Экспертные советы по развитию вашего бизнеса.</p>
-                </div>
-            </div>
+      <!-- Блок с графиком -->
+      <div class="chart-box">
+        <img src="assets/images/chart.png" alt="График экономического роста">
+      </div>
+    </section>
 
-            <h3>Таблица услуг</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Услуга</th>
-                        <th>Описание</th>
-                        <th>Цена</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Веб-разработка</td>
-                        <td>Создание сайтов под ключ</td>
-                        <td>от 50,000 руб.</td>
-                    </tr>
-                    <tr>
-                        <td>Дизайн</td>
-                        <td>Разработка логотипов и фирменного стиля</td>
-                        <td>от 20,000 руб.</td>
-                    </tr>
-                    <tr>
-                        <td>Консалтинг</td>
-                        <td>Бизнес-стратегии и анализ</td>
-                        <td>от 30,000 руб.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <!-- Блок с анализом -->
+    <section class="analysis">
+      <h2>Аналитические материалы</h2>
+      
+      <!-- Маркированный список -->
+      <ul class="marked-list">
+        <li>Обзор рынка недвижимости</li>
+        <li>Тенденции фондового рынка</li>
+        <li>Прогноз курса валют</li>
+      </ul>
 
-        <section id="contact" class="contact">
-            <h2>Контакты</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="email" placeholder="Ваш email" required>
-                <textarea placeholder="Ваше сообщение" required></textarea>
-                <button type="submit">Отправить</button>
-            </form>
-        </section>
-    </main>
+      <!-- Таблица 2 -->
+      <table class="forecast-table">
+        <caption>Прогноз на квартал</caption>
+        <tr>
+          <th>Сектор</th>
+          <th>Оптимистичный</th>
+          <th>Базовый</th>
+        </tr>
+        <tr>
+          <td>Промышленность</td>
+          <td>+3.5%</td>
+          <td>+2.1%</td>
+        </tr>
+      </table>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2023 Одностраничный сайт. Все права защищены.</p>
-    </footer>
+  <!-- Подвал сайта -->
+  <footer class="main-footer">
+    <p>&copy; 2023 Аналитический портал. Все права защищены.</p>
+    
+    <!-- Список определений 2 -->
+    <dl class="footer-definitions">
+      <dt>Контакты</dt>
+      <dd>info@analytics.ru</dd>
+      <dt>Телефон</dt>
+      <dd>+7 (495) 123-45-67</dd>
+    </dl>
+  </footer>
 
-    <script src="assets/js/script.js"></script>
+  <!-- Подключаем скрипты -->
+  <script src="assets/js/effects.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
