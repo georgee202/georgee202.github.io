@@ -1,0 +1,258 @@
+/* main.css – основные стили, подключает все остальные файлы */
+@import url("grid.css");
+@import url("flex.css");
+@import url("animation.css");
+
+/* ======== Базовые глобальные настройки ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, rgb(254,245,187), rgb(247,235,120) 70%, rgb(238,213,107) 100%);
+  /* Пример генерации собственного цвета через rgb() */
+  color: rgb(70,65,45);
+  min-height: 100vh;
+}
+
+/* ======== Навигация ========== */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  background: linear-gradient(90deg, rgb(255,243,170), rgb(235,226,98) 90%);
+  box-shadow: 0 3px 14px -6px rgba(209,188,3, 0.26);
+}
+
+/* Оформляем элементы меню через класс nav, также — hover с анимацией */
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(128,112,19);
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s, transform 0.35s;
+}
+
+nav a:hover, nav a:focus {
+  background: linear-gradient(90deg, rgb(243,215,82), rgb(251,243,200));
+  color: #fff;
+  animation: navlink-pop 0.3s;
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* ======== Блочная структура контейнеров ========== */
+.container {
+  padding: 32px 18px 32px 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Более выразительный Header */
+header, h1, h2 {
+  font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+header, h1, .animated-header, #mainTitle {
+    text-align: center;
+    margin: 0 auto 1.4em auto;
+    /* остальной стиль можно оставить */
+    max-width: 900px;
+}
+
+h2 {
+  color: rgb(120,92,37);
+  margin-top: 2em;
+  letter-spacing: 0.7px;
+  transform: none;
+}
+
+/* ======== Таблицы ========= */
+.stats-table, .objects-table, .economy-table {
+  width: 100%;
+  margin: 2em 0 1.7em 0;
+  border-collapse: collapse;
+  box-shadow: 0 3px 20px -8px rgba(250,185,22,0.15);
+  background: linear-gradient(90deg, #ffffff 60%, #fffcdc 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+  letter-spacing: 1px;
+  color: rgb(186,142,7);
+}
+
+.stats-table th, .objects-table th, .economy-table th {
+  background: rgb(251,228,110);
+  color: #836418;
+  padding: 11px 12px;
+  font-size: 1em;
+  border: 1px solid #ffe487;
+}
+.stats-table td, .objects-table td, .economy-table td {
+  padding: 9px 12px;
+  border: 1px solid #f9e9a2;
+  text-align: center;
+}
+.stats-table tr:hover, .objects-table tr:hover, .economy-table tr:hover {
+  background: rgb(254,252,215);
+  box-shadow: 0 10px 20px -8px rgb(239,204,22,0.18);
+  transition: 0.3s;
+  animation: rowfade 0.5s;
+}
+
+/* ====== Галерея и картинки ======= */
+.gallery-section {
+  background: linear-gradient(105deg, rgb(255,242,200) 60%, rgb(245,227,170) 100%);
+  border-radius: 14px;
+  box-shadow: 0 6px 22px -9px #e4ce7199;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  padding: 1.5em 2em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1em;
+  justify-items: center;
+}
+.gallery figure {
+  margin: 8px;
+  border-radius: 9px;
+  background: #fff7e3;
+  box-shadow: 0 4px 18px -3px rgba(216,196,102,0.23);
+  overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.5s;
+  opacity: 0.97;
+  border: 0;
+}
+.gallery figure:hover {
+  box-shadow: 0 15px 32px -8px rgb(255,220,51,0.45);
+  animation: figpulse 0.8s;
+  transform: scale(1.04) rotate(-2deg);
+}
+.gallery img {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 16/9;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px 6px 0 0;
+}
+.gallery figcaption {
+  font-size: 0.98em;
+  color: #7a6c0a;
+  padding: 9px 0 6px 0;
+}
+
+/* ======= Lists (нумерованные, маркированные, определений) ======= */
+.lists-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.7em;
+  margin: 2em 0 1.2em 0;
+}
+ol, ul {
+  font-size: 1em;
+  margin-bottom: 1.2em;
+}
+ol[type="I"] {
+  list-style-type: upper-roman;
+}
+ul {
+  padding-left: 1.5em;
+}
+ul[style*="square"] {
+  color: #666025;
+}
+ul[style*="circle"], ul[style*="disc"] {
+  color: #5c5c5c;
+}
+
+/* ======== Списки определений ======== */
+dl {
+  background: url('../img/gradbg.png') repeat-x bottom left, linear-gradient(90deg, #fffbe3 60%, #f7e59a 100%);
+  border-radius: 8px;
+  padding: 1.1em 1em 1em 1em;
+  margin: 2em 0 1em 0;
+  box-shadow: 0 3px 17px -10px rgb(180,148,25,0.13);
+}
+dt {
+  font-weight: bold;
+  color: #bb9520;
+  margin-top: 1em;
+  letter-spacing: 0.4px;
+}
+dd {
+  margin-left: 1.2em;
+  color: #534c16;
+}
+
+/* ======== Overflow/обрезка ======== */
+.info-overflow {
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 1em;
+  background: linear-gradient(95deg, #fff8c6 60%, #f7ea9a 100%);
+  border-radius: 6px;
+  font-size: 0.97em;
+  box-shadow: 0 3px 12px -3px #ffd75055;
+  margin-bottom: 1.4em;
+}
+
+/* ======= Боксы под Flex/Grid для flex.css и grid.css ====== */
+.flex-block { /* Пример Flex-блока (используется во flex.css) */
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.grid-block { /* Пример Grid-блока (используется во grid.css) */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+
+.gallery-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.2em;
+  color: rgb(120,92,37);
+  letter-spacing: 0.7px;
+  font-size: 2.2em;
+  font-weight: bold;
+  transform: none;
+}
+
+.centered-title, .central-desc {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: rgb(120,92,37);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.central-desc {
+  font-size: 1.1em;
+  color: rgb(70,65,45);
+  margin-bottom: 2em;
+}
+
+.container > h1, .container > .central-title, .container > .central-desc {
+  grid-column: 1 / -1;  /* На всю ширину grid */
+  text-align: center;
+}
+

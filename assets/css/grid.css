@@ -1,0 +1,28 @@
+/* Главная: размещение разделов (index, stations) */
+.container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2em;
+}
+
+.col, .col-left, .col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em; /* регулируйте как нравится */
+}
+
+/* Для галереи или других блоков — Grid-структура уже в main.css (gallery) */
+
+/* Вторичная структура (на второй странице) */
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 3em;
+}
+
+/* Адаптив (Grid переключается в столбцы на узких экранах) */
+@media (max-width: 800px) {
+  .container, .grid-two-col {
+    grid-template-columns: 1fr;
+  }
+}

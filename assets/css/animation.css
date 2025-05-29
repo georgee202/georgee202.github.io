@@ -1,0 +1,69 @@
+/* ====== Анимации для эффектов ====== */
+
+/* Анимация появления заголовка */
+@keyframes headgrow {
+  from { opacity: 0; transform: scale(0.8) skew(-5deg, 3deg);}
+  to   { opacity: 1; transform: scale(1.1) skew(-2deg, 3deg);}
+}
+
+/* Анимация всплывания строки таблицы */
+@keyframes rowfade {
+  from { background: #fffbe1; opacity: 0.6; }
+  to   { background: #feffd6; opacity: 1; }
+}
+
+/* Галерея — анимация при кадре */
+@keyframes figpulse {
+  0%   { box-shadow: 0 2px 7px -3px #ffd750bb; transform: scale(1);}
+  50%  { box-shadow: 0 12px 24px -6px #ffe978cc; transform: scale(1.07) rotate(-1.5deg);}
+  100% { box-shadow: 0 2px 7px -3px #ffd750bb; transform: scale(1);}
+}
+
+/* Мигающий эффект — применить к .blinking */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+.blinking {
+  animation: blink 1.0s both 1;
+}
+
+/* Перелив для наведения на ссылку */
+@keyframes navlink-pop {
+  from { color: #fffbe1;  background: #e3c51a; }
+  to   { color: #fff;     background: #fbf3c8;}
+}
+
+/* Анимация fade-in для секций (например, галерея, overflow и др.) */
+@keyframes fadein-block {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; }
+}
+.gallery-section, .info-overflow {
+  animation: fadein-block 1s;
+}
+dl, .stats-table, .economy-table, .objects-table {
+  animation: fadein-block 1.2s;
+}
+
+/* Пульсация и шиммер для выделения секции (например, .economy-table в economics) */
+@keyframes shimmer {
+  0%   { background: linear-gradient(90deg, #fffbe3 80%, #fff7b8 100%);}
+  50%  { background: linear-gradient(90deg, #ffee80 70%, #fff3b0 100%);}
+  100% { background: linear-gradient(90deg, #fffbe3 80%, #fff7b8 100%);}
+}
+.economy-table {
+  animation: shimmer 2.5s infinite;
+}
+
+/* ===== Тени и переходы ===== */
+.stats-table, .economy-table, .objects-table, .gallery figure, .flex-card {
+  transition: box-shadow 0.35s, background 0.45s, transform 0.4s;
+}
+
+.stats-table tr:hover, .objects-table tr:hover, .economy-table tr:hover {
+  box-shadow: 0 8px 20px -7px #eed03c90;
+}
+.gallery figure:hover, .flex-card:hover {
+  box-shadow: 0 12px 32px -7px #f3d356b0;
+}
